@@ -13,7 +13,7 @@
     "start": "webpack-dev-server",
     "pre": "babel './src/components' -d 'lib/src/components'",
     "build": "webpack --config webpack.lib.js",
-    "build:demo": "webpack --config webpack.lib.js"
+    "build:demo": "webpack"
   },
   "repository": {
     "type": "git",
