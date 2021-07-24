@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "baseUrl": ".",
+    "paths": {
+      "utils/*": ["include/utils/*"],
+      "stylesheets": ["stylesheets/"],
+      "examples": ["examples/"]
+    },
+    "rootDirs": ["include"],
+    "outDir": "dist",
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "rootDir": ".",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "importHelpers": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "allowJs": true
+  },
+  "include": [  // 所需要用ts的文件
+    "src/**/*",
+    "types/**/*",
+  ],
+  "exclude": [  //排除文件
+    "node_modules",
+    "*.js"
+  ]
+}

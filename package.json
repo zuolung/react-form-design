@@ -1,0 +1,52 @@
+{
+  "name": "react-form-design",
+  "version": "1.1.9",
+  "description": "React form assembly, implementing the React form data external",
+  "main": "index.js",
+  "keywords": [
+    "react",
+    "form",
+    "formData",
+    "rc-form"
+  ],
+  "scripts": {
+    "start": "webpack-dev-server",
+    "pre": "babel './src/components' -d 'lib/src/components'",
+    "build": "webpack --config webpack.lib.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zuolung/react-form-design.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zuolung/react-form-design/issues"
+  },
+  "homepage": "https://github.com/zuolung/react-form-designe#readme",
+  "dependencies": {
+    "antd-mobile": "^2.3.1",
+    "px2rem-loader": "^0.1.9",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/parser": "^7.11.5",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "@types/react": "^17.0.14",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "html-webpack-plugin": "^4.0.4",
+    "less": "3.0.0",
+    "less-loader": "5.0.0",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
