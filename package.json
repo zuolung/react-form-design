@@ -1,6 +1,6 @@
 {
-  "name": "react-form-design",
-  "version": "1.1.9",
+  "name": "react-form-art",
+  "version": "0.0.2",
   "description": "React form assembly, implementing the React form data external",
   "main": "index.js",
   "keywords": [
