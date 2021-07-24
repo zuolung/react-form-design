@@ -5,8 +5,8 @@ const path = require("path");
 module.exports = {
   mode: "none",
   entry: {
-    "rcFormSimple": "./src/components/Form.js",
-    "rcFormSimple.min": "./src/components/Form.js",
+    "rcFormSimple": "./src/components/index.js",
+    "rcFormSimple.min": "./src/components/index.js",
   },
   output: {
     filename: "[name].js",
@@ -24,7 +24,37 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
-      }
+      },
+      {
+        test: /\.less$/,
+        exclude: /node_modules/,
+        loader: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: 'px2rem-loader',
+            options: {
+              remUnit: 50,
+              remPrecision: 15
+            }
+          },
+          "less-loader",
+        ],
+      },
+      {
+        test: /\.css$/i,
+        loader: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: 'px2rem-loader',
+            options: {
+              remUnit: 50,
+              remPrecision: 15
+            }
+          }
+        ],
+      },
     ],
   },
 
