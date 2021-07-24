@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     // 打包好的文件存放在哪里，以及怎么命名
-    path: path.join(__dirname, '/disk'),
+    path: path.join(__dirname, '/dist'),
     filename: 'bundle.js'
   },
   module: {
