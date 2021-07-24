@@ -10,10 +10,8 @@ npm i react-form-design -S
 
 ### API
 
-##### Form
-
-Form 组件属性说明如下
-| 属性 | 说明 | 类型 | 默认值 |
+### Form
+| 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | className | form 标签类名 | string | '' |
 | initValues | 表单项统一初始化 | Object | {} |
@@ -22,10 +20,7 @@ Form 组件属性说明如下
 | ref | 可获取表单仓库实例方法 | React.RefObject | {} |
 
 ##### FormItem
-
-const { FormItem } = Form
-FormItem 组件属性说明如下
-| 属性 | 说明 | 类型 | 默认值 |
+| 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | className | FormItem 容器的类名 | string | '' |
 | labelClassName | label 的类名 | string | '' |
@@ -35,11 +30,11 @@ FormItem 组件属性说明如下
 | label | label 标签的文本 | ReactNode | - |
 | labelWidth | label 标签的文本 | number | - |
 | name | 表单项字段名称 | string | - |
-| rules | 表单项校验逻辑, message 属性针对 rule 为 RegExp 触发 | { rule: RegExp | Function, message: '' } | - |
+| rules | 表单项校验逻辑, message 属性针对 rule 为 RegExp 触发 | { rule: RegExp 或者 Function：(value, call)=> {call(null)}, message: '' } | - |
 | trigger | 表单项更改的方法名 | string | 'onChange' |
 | validateTrigger | 表单项规则校验触发的方法名 | string | 'onBlur' |
 | required | 表单项是否必填 | Boolean | false |
-| messageShow | 表单项错误提示类型, 错误的时候提示，成功的时候提示，都提示 | 'failed'|'success'|'all'|'hidden' | 'all' |
+| messageShow | 表单项错误提示类型, 错误的时候提示，成功的时候提示，都提示 | 'failed'/'success'/'all'/'hidden' | 'all' |
 
 ### 基本使用
 
@@ -114,6 +109,9 @@ function Demo() {
         label="季节选择"
         labelWidth={150}
         name="yearSeason"
+        validateTrigger="onOk"
+        trigger="onOk"
+        messageShow="failed"
         rules={{
           rule: (values, call) => {
             if (form.current.getFieldValue('name').length > 2) {
@@ -123,8 +121,6 @@ function Demo() {
             } else call(null)
           }
         }}
-        validateTrigger="onOk"
-        trigger="onOk"
       >
         <Picker
           data={seasons}
