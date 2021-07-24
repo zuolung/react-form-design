@@ -1,6 +1,6 @@
 {
   "name": "react-form-art",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React form assembly, implementing the React form data external",
   "main": "index.js",
   "keywords": [

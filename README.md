@@ -42,7 +42,7 @@ npm i react-form-art -S
 
 ```
 import { InputItem, Button, Picker } from "antd-mobile";
-import Form from "react-form-design";
+import Form from "react-form-art";
 import React from "react";
 
 const FormItem = Form.FormItem
