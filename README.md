@@ -38,6 +38,22 @@ npm i react-form-art -S
 | required          | 表单项是否必填                                             | Boolean                                                                   | false      |
 | messageShow       | 表单项错误提示类型, 错误的时候提示，成功的时候提示，都提示 | 'failed'/'success'/'all'/'hidden'                                         | 'all'      |
 
+### form实例的方法
+```
+function Demo() {
+  const form = React.useRef(null)
+  return <Form ref={form}>...</Form>
+}
+```
+form.current的API如下：
+
+| 属性           | 说明                   | 类型            |
+| -------------- | ---------------------- | --------------- |
+| getFieldValue      | 传入表单主键，返回表单值          | （string）=> value          |
+| getFieldsValue     |  传入多个表单主键，返回多个表单值       | Object => values          |
+| resetFields | 重置表单所有值          | Function  |
+| setFields            | 可获取表单仓库实例方法 | Function |
+| submit            | 提交方法，回掉参数是否校验完成 |  | boolean => {} ｜
 ### 基本使用
 
 ```
