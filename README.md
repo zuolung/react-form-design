@@ -1,10 +1,10 @@
 # react-form-design
 
-### Demo 查看
+### Demo online
 
 [在线查看](https://zuolung.github.io/react-form-design/dist/index.html)
 
-### 安装
+### install
 
 npm i react-form-art -S
 
@@ -22,14 +22,14 @@ npm i react-form-art -S
 
 ##### FormItem
 
-| 属性              | 说明                                                       | 类型                                                                      | 默认值     | 版本 |
-| ----------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------- | ---------- | ---- |
-| className         | FormItem 容器的类名                                        | string                                                                    | ''         |
-| labelClassName    | label 的类名                                               | string                                                                    | ''         |
-| controllClassName | 表单项所在容器的类名                                       | string                                                                    | ''         |
-| requiredClassName | 必填标识的类名                                             | string                                                                    | ''         |
-| requiredIcon      | 自定义必填 icon                                            | React.ReactNode                                                           | ''         |
-| label             | label 标签的文本                                           | ReactNode                                                                 | -          |
+| 属性              | 说明                                                       | 默认值                                                                    | 版本       |
+| ----------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------- | ---------- |
+| className         | FormItem 容器的类名                                        | string                                                                    | -          |
+| labelClassName    | label 的类名                                               | string                                                                    | -          |
+| controllClassName | 表单项所在容器的类名                                       | string                                                                    | -          |
+| requiredClassName | 必填标识的类名                                             | string                                                                    | -          |
+| requiredIcon      | 自定义必填标识 icon                                        | React.ReactNode                                                           | -          |
+| label             | label 标签的文本                                           | React.ReactNode                                                           | -          |
 | labelWidth        | label 标签的文本                                           | number                                                                    | -          |
 | name              | 表单项字段名称                                             | string                                                                    | -          |
 | rules             | 表单项校验逻辑, message 属性针对 rule 为 RegExp 触发       | { rule: RegExp 或者 Function：(value, call)=> {call(null)}, message: '' } | -          |
@@ -38,22 +38,25 @@ npm i react-form-art -S
 | required          | 表单项是否必填                                             | Boolean                                                                   | false      |
 | messageShow       | 表单项错误提示类型, 错误的时候提示，成功的时候提示，都提示 | 'failed'/'success'/'all'/'hidden'                                         | 'all'      |
 
-### form实例的方法
+### form 实例的方法
+
 ```
 function Demo() {
   const form = React.useRef(null)
   return <Form ref={form}>...</Form>
 }
 ```
-form.current的API如下：
 
-| 属性           | 说明                   | 类型            |
-| -------------- | ---------------------- | --------------- |
-| getFieldValue      | 传入表单主键，返回表单值          | （string）=> value          |
-| getFieldsValue     |  传入多个表单主键，返回多个表单值       | Object => values          |
-| resetFields | 重置表单所有值          | Function  |
-| setFields            | 可获取表单仓库实例方法 | Function |
-| submit            | 提交方法，回掉参数是否校验完成 |  | boolean => {} ｜
+form.current 的 API 如下：
+
+| 属性           | 说明                           | 类型                         |
+| -------------- | ------------------------------ | ---------------------------- | --------------------------------------- |
+| getFieldValue  | 传入表单主键，返回表单值       | （key: String）=> FieldValue |
+| getFieldsValue | 获取所有表单值                 | Object => FieldValues        |
+| resetFields    | 重置表单所有值                 | values:Object => void        |
+| setFields      | 设置表单值                     | values:Object => void        |
+| submit         | 提交方法，回掉参数是否校验完成 |                              | (errorMessages, FieldValues) => void ｜ |
+
 ### 基本使用
 
 ```

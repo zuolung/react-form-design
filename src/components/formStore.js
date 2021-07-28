@@ -173,19 +173,20 @@ class FormStore {
   }
   /* 表单整体验证 */
   validateFields(callback) {
-    let status = true
+    let errorsMess = []
     Object.keys(this.model).forEach(modelName => {
       const modelStates = this.validateFieldValue(modelName, true)
-      if (modelStates === 'reject') status = false
+      if (modelStates === 'reject') errorsMess.push(this.model[modelName].message)
     })
-    callback(status)
+    callback(errorsMess)
   }
   /* 提交表单 */
   submit(cb) {
-    this.validateFields((res) => {
+    this.validateFields((errorMess) => {
       const { onFinish, onFinishFailed } = this.callback
-      cb && cb(res)
-      if (!res) onFinishFailed && typeof onFinishFailed === 'function' && onFinishFailed() /* 验证失败 */
+      const fieldValues = this.getFieldsValue()
+      cb && cb(errorMess.length ? errorMess : null, fieldValues)
+      if (!errorMess) onFinishFailed && typeof onFinishFailed === 'function' && onFinishFailed() /* 验证失败 */
       onFinish && typeof onFinish === 'function' && onFinish(this.getFieldsValue())     /* 验证成功 */
     })
   }

@@ -1,13 +1,13 @@
 {
   "name": "react-form-art",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "React form assembly, implementing the React form data external",
   "main": "index.js",
   "keywords": [
     "react",
     "form",
-    "formData",
-    "rc-form"
+    "rc-form",
+    "react-form"
   ],
   "scripts": {
     "start": "webpack-dev-server",
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/zuolung/react-form-design/issues"
   },
-  "homepage": "https://github.com/zuolung/react-form-designe#readme",
+  "homepage": "https://github.com/zuolung/react-form-design#readme",
   "dependencies": {
     "antd-mobile": "^2.3.1",
     "px2rem-loader": "^0.1.9",
@@ -38,7 +38,6 @@
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
-    "@types/react": "^17.0.14",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.3.0",
     "html-webpack-plugin": "^4.0.4",
