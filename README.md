@@ -12,8 +12,8 @@ npm i react-form-art -S
 
 ### Form
 
-| 属性           | 说明                   | 类型            | 默认值 | 版本 |
-| -------------- | ---------------------- | --------------- | ------ | ---- |
+| 属性           | 说明                   | 类型            | 默认值 |
+| -------------- | ---------------------- | --------------- | ------ |
 | className      | form 标签类名          | string          | ''     |
 | initValues     | 表单项统一初始化       | Object          | {}     |
 | onFinish       | 表单提交触发           | Function        | {}     |
@@ -49,13 +49,13 @@ function Demo() {
 
 form.current 的 API 如下：
 
-| 属性           | 说明                           | 类型                         |
-| -------------- | ------------------------------ | ---------------------------- | --------------------------------------- |
-| getFieldValue  | 传入表单主键，返回表单值       | （key: String）=> FieldValue |
-| getFieldsValue | 获取所有表单值                 | Object => FieldValues        |
-| resetFields    | 重置表单所有值                 | values:Object => void        |
-| setFields      | 设置表单值                     | values:Object => void        |
-| submit         | 提交方法，回掉参数是否校验完成 |                              | (errorMessages, FieldValues) => void ｜ |
+| 属性           | 说明                           | 类型                           |
+| -------------- | ------------------------------ | ------------------------------ |
+| getFieldValue  | 传入表单主键，返回表单值       | （key: String）=> FieldValue   |
+| getFieldsValue | 获取所有表单值                 | Object => FieldValues          |
+| resetFields    | 重置表单所有值                 | values:Object => void          |
+| setFields      | 设置表单值                     | values:Object => void          |
+| submit         | 提交方法，回掉参数是否校验完成 | (boolean, FieldValues) => void |
 
 ### 基本使用
 
