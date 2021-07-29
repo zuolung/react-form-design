@@ -34,8 +34,11 @@ function Demo() {
 
   const handleClick = () => {
     if (form.current) console.info(form.current.getFieldsValue())
-    form.current.submit((res) => {
-      console.log(res)
+    form.current.submit((errorMessage, fieldValues) => {
+      if (errorMessage) {
+        return console.info('errorMessage', errorMessage)
+      }
+      console.info(fieldValues)
     })
   }
 
