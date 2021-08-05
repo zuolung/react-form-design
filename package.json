@@ -1,6 +1,6 @@
 {
   "name": "react-form-art",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React form assembly, implementing the React form data external",
   "main": "index.js",
   "keywords": [
@@ -8,6 +8,11 @@
     "form",
     "rc-form",
     "react-form"
+  ],
+  "files": [
+    "lib",
+    "readme.md",
+    "package.json"
   ],
   "scripts": {
     "start": "webpack-dev-server",
