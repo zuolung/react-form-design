@@ -1,6 +1,6 @@
 {
   "name": "react-form-art",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React form assembly, implementing the React form data external",
   "main": "index.js",
   "keywords": [
@@ -11,7 +11,7 @@
   ],
   "files": [
     "lib",
-    "readme.md",
+    "README.md",
     "package.json"
   ],
   "scripts": {
