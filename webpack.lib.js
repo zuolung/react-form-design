@@ -1,5 +1,6 @@
 
 const TerserPlugin = require("terser-webpack-plugin");
+const nodeExternals = require('webpack-node-externals');
 const path = require("path");
 
 module.exports = {
@@ -15,7 +16,8 @@ module.exports = {
     libraryExport: "default", // 
     libraryTarget: "umd", // var | this | global | window | umd | commonJS
   },
-
+  // devtool: 'source-map',
+  externals: [nodeExternals()],
   module: {
     rules: [
       {
@@ -31,13 +33,6 @@ module.exports = {
         loader: [
           "style-loader",
           "css-loader",
-          {
-            loader: 'px2rem-loader',
-            options: {
-              remUnit: 50,
-              remPrecision: 15
-            }
-          },
           "less-loader",
         ],
       },
@@ -46,16 +41,9 @@ module.exports = {
         loader: [
           "style-loader",
           "css-loader",
-          {
-            loader: 'px2rem-loader',
-            options: {
-              remUnit: 50,
-              remPrecision: 15
-            }
-          }
         ],
       },
-    ],
+    ]
   },
 
   /** umd */
